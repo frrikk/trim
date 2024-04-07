@@ -1,5 +1,3 @@
-# TRIM
-
 # SPEC-001: Training Diary App
 
 ## Background
@@ -65,6 +63,26 @@ Developed with Next.js 14, leveraging the app directory for enhanced routing and
   - Custom hooks in `hooks/`
   - API client setup in `lib/`
   - Global styles in `styles/`
+
+### API Endpoints
+
+#### User Authentication
+- **POST `/api/auth/signup`**: Register a new user account.
+- **POST `/api/auth/login`**: Authenticate a user and return a token.
+- **GET `/api/auth/user`**: Retrieve the current user's profile (requires authentication).
+
+#### Training Sessions
+- **GET `/api/sessions`**: Retrieve a list of all training sessions for the authenticated user.
+- **POST `/api/sessions`**: Create a new training session.
+- **GET `/api/sessions/{sessionId}`**: Retrieve details of a specific training session.
+- **PUT `/api/sessions/{sessionId}`**: Update a specific training session.
+- **DELETE `/api/sessions/{sessionId}`**: Delete a specific training session.
+
+#### Exercises within Sessions
+- **GET `/api/sessions/{sessionId}/exercises`**: Retrieve all exercises for a specific session.
+- **POST `/api/sessions/{sessionId}/exercises`**: Add a new exercise to a session.
+- **PUT `/api/sessions/{sessionId}/exercises/{exerciseId}`**: Update an exercise within a session.
+- **DELETE `/api/sessions/{sessionId}/exercises/{exerciseId}`**: Remove an exercise from a session.
 
 ## Implementation
 
